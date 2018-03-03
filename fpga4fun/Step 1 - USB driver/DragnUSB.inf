@@ -1,0 +1,42 @@
+[Version]
+Signature = "$CHICAGO$"
+Class = USB
+Provider = "fpga4fun.com"
+
+[Manufacturer]
+"fpga4fun.com" = DeviceList
+
+[DeviceList]
+"Dragon FPGA board - www.fpga4fun.com" = Install, USB\VID_0547&PID_2131
+
+[Install]
+CopyFiles = FilesToCopy
+AddReg = Install.AddReg
+
+[Install.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,DragnUSB.sys
+
+[Install.NT]
+CopyFiles = FilesToCopy
+
+[Install.NT.Services]
+AddService = DragonUSBservice, 0x00000002, ServiceInstall
+
+[ServiceInstall]
+ServiceType    = 1
+StartType      = 3
+ErrorControl   = 1
+ServiceBinary  = %12%\DragnUSB.sys
+
+[SourceDisksFiles]
+DragnUSB.sys = 1
+
+[SourceDisksNames]
+1="Dragon USB driver files",,,
+
+[FilesToCopy]
+DragnUSB.sys
+
+[DestinationDirs]
+DefaultDestDir = 10,System32\Drivers

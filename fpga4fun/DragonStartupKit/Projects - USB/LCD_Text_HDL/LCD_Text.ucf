@@ -1,0 +1,23 @@
+NET "CLK_USB"  LOC = "P18"  ;
+NET "USB_FWRn"  LOC = "P29"  ;
+#NET "USB_FRDn"  LOC = "P26"  ;
+NET "USB_D<0>"  LOC = "P67"  ;
+NET "USB_D<1>"  LOC = "P62"  ;
+NET "USB_D<2>"  LOC = "P60"  ;
+NET "USB_D<3>"  LOC = "P57"  ;
+NET "USB_D<4>"  LOC = "P39"  ;
+NET "USB_D<5>"  LOC = "P44"  ;
+NET "USB_D<6>"  LOC = "P46"  ;
+NET "USB_D<7>"  LOC = "P49"  ;
+
+NET "LCD_E"  LOC = "P38"  ;
+NET "LCD_RS"  LOC = "P27"  ;
+NET "LCD_RW"  LOC = "P28"  ;
+NET "LCD_DB<0>"  LOC = "P40"  ;
+NET "LCD_DB<1>"  LOC = "P41"  ;
+NET "LCD_DB<2>"  LOC = "P42"  ;
+NET "LCD_DB<3>"  LOC = "P43"  ;
+NET "LCD_DB<4>"  LOC = "P47"  ;
+NET "LCD_DB<5>"  LOC = "P48"  ;
+NET "LCD_DB<6>"  LOC = "P50"  ;
+NET "LCD_DB<7>"  LOC = "P51"  ;

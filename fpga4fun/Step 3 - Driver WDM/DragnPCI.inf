@@ -1,0 +1,45 @@
+; "DragonPCI.sys" has been renamed as "DragnPCI.sys"
+; to be compatible with Win98
+
+[Version]
+Signature = "$CHICAGO$"
+Class = Unknown
+Provider = "fpga4fun.com"
+
+[Manufacturer]
+"fpga4fun.com" = DeviceList
+
+[DeviceList]
+"Sample Dragon PCI driver - www.fpga4fun.com" = Install, PCI\VEN_0100&DEV_0000&SUBSYS_00000000&REV_00
+
+[Install]
+CopyFiles = FilesToCopy
+AddReg = Install.AddReg
+
+[Install.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,DragnPCI.sys
+
+[Install.NT]
+CopyFiles = FilesToCopy
+
+[Install.NT.Services]
+AddService = DragonPCIservice, 0x00000002, ServiceInstall
+
+[ServiceInstall]
+ServiceType    = 1
+StartType      = 3
+ErrorControl   = 1
+ServiceBinary  = %12%\DragnPCI.sys
+
+[SourceDisksFiles]
+DragnPCI.sys = 1
+
+[SourceDisksNames]
+1="Dragon PCI driver files",,,
+
+[FilesToCopy]
+DragnPCI.sys
+
+[DestinationDirs]
+DefaultDestDir = 10,System32\Drivers

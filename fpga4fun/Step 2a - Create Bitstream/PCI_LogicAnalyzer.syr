@@ -1,0 +1,710 @@
+Release 10.1 - xst K.31 (nt)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/Documents and Settings/John/Desktop/RevEng-1/fpga4fun/Step 2a - Create Bitstream/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to C:/Documents and Settings/John/Desktop/RevEng-1/fpga4fun/Step 2a - Create Bitstream/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: PCI_LogicAnalyzer.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+     9.1) Device utilization summary
+     9.2) Partition Resource Summary
+     9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "PCI_LogicAnalyzer.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "PCI_LogicAnalyzer"
+Output Format                      : NGC
+Target Device                      : xc2s100-6-tq144
+
+---- Source Options
+Top Module Name                    : PCI_LogicAnalyzer
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : lut
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100
+Add Generic Clock Buffer(BUFG)     : 4
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Convert Tristates To Logic         : Yes
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Library Search Order               : PCI_LogicAnalyzer.lso
+Keep Hierarchy                     : NO
+Netlist Hierarchy                  : as_optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "SR16.v" in library work
+Compiling verilog file "SR16_8.v" in library work
+Module <SR16> compiled
+Compiling verilog file "PCI_LogicAnalyzer.v" in library work
+Module <SR16_8> compiled
+Module <PCI_LogicAnalyzer> compiled
+No errors in compilation
+Analysis of file <"PCI_LogicAnalyzer.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <PCI_LogicAnalyzer> in library <work> with parameters.
+	IO_address = "00000000000000000000001000000000"
+	PCI_CBECD_CSRead = "1010"
+	PCI_CBECD_CSWrite = "1011"
+	PCI_CBECD_IORead = "0010"
+	PCI_CBECD_IOWrite = "0011"
+	PCI_CBECD_MEMRead = "0110"
+	PCI_CBECD_MEMWrite = "0111"
+
+Analyzing hierarchy for module <SR16_8> in library <work>.
+
+Analyzing hierarchy for module <SR16> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <PCI_LogicAnalyzer>.
+	IO_address = 32'b00000000000000000000001000000000
+	PCI_CBECD_CSRead = 4'b1010
+	PCI_CBECD_CSWrite = 4'b1011
+	PCI_CBECD_IORead = 4'b0010
+	PCI_CBECD_IOWrite = 4'b0011
+	PCI_CBECD_MEMRead = 4'b0110
+	PCI_CBECD_MEMWrite = 4'b0111
+Module <PCI_LogicAnalyzer> is correct for synthesis.
+ 
+Analyzing module <SR16_8> in library <work>.
+Module <SR16_8> is correct for synthesis.
+ 
+Analyzing module <SR16> in library <work>.
+Module <SR16> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <SR16>.
+    Related source file is "SR16.v".
+WARNING:Xst:646 - Signal <data<15>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 16-bit register for signal <data>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <SR16> synthesized.
+
+
+Synthesizing Unit <SR16_8>.
+    Related source file is "SR16_8.v".
+Unit <SR16_8> synthesized.
+
+
+Synthesizing Unit <PCI_LogicAnalyzer>.
+    Related source file is "PCI_LogicAnalyzer.v".
+WARNING:Xst:647 - Input <USB_FWRn> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <PCI_data<31:2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <PCI_Stop> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 16x32-bit single-port RAM <Mram_RAM> for signal <RAM>.
+    Found 256x48-bit dual-port RAM <Mram_RAM_LA> for signal <RAM_LA>.
+    Using one-hot encoding for signal <stop_acq>.
+    Found 32-bit tristate buffer for signal <PCI_AD>.
+    Found 1-bit tristate buffer for signal <PCI_DEVSELn>.
+    Found 1-bit tristate buffer for signal <PCI_TRDYn>.
+    Found 8-bit tristate buffer for signal <USB_D>.
+    Found 8-bit up counter for signal <acq_counter>.
+    Found 1-bit register for signal <acquisition>.
+    Found 8-bit register for signal <addr_regb>.
+    Found 8-bit up counter for signal <addra>.
+    Found 11-bit up counter for signal <addrb>.
+    Found 1-bit register for signal <PCI_AD_OE>.
+    Found 32-bit register for signal <PCI_data>.
+    Found 1-bit register for signal <PCI_DevSel>.
+    Found 1-bit register for signal <PCI_DevSelOE>.
+    Found 1-bit register for signal <PCI_TargetReady>.
+    Found 1-bit register for signal <PCI_Transaction>.
+    Found 1-bit register for signal <PCI_Transaction_Read_nWrite>.
+    Found 4-bit register for signal <PCI_TransactionAddr>.
+    Found 2-bit register for signal <stop_acq>.
+    Found 8-bit register for signal <USB_Data>.
+    Found 8-bit 8-to-1 multiplexer for signal <USB_Data$mux0000> created at line 210.
+    Summary:
+	inferred   2 RAM(s).
+	inferred   3 Counter(s).
+	inferred  61 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
+	inferred  42 Tristate(s).
+Unit <PCI_LogicAnalyzer> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 16x32-bit single-port RAM                             : 1
+ 256x48-bit dual-port RAM                              : 1
+# Counters                                             : 3
+ 11-bit up counter                                     : 1
+ 8-bit up counter                                      : 2
+# Registers                                            : 60
+ 1-bit register                                        : 7
+ 16-bit register                                       : 48
+ 2-bit register                                        : 1
+ 32-bit register                                       : 1
+ 4-bit register                                        : 1
+ 8-bit register                                        : 2
+# Multiplexers                                         : 1
+ 8-bit 8-to-1 multiplexer                              : 1
+# Tristates                                            : 4
+ 1-bit tristate buffer                                 : 2
+ 32-bit tristate buffer                                : 1
+ 8-bit tristate buffer                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Loading device for application Rf_Device from file 'v100.nph' in environment C:\Xilinx\10.1\ISE.
+
+Synthesizing (advanced) Unit <PCI_LogicAnalyzer>.
+INFO:Xst - The RAM <Mram_RAM_LA> will be implemented as a BLOCK RAM, absorbing the following register(s): <addr_regb>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 48-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <PCI_CLK>       | rise     |
+    |     weA            | connected to signal <acquisition>   | high     |
+    |     addrA          | connected to signal <addra>         |          |
+    |     diA            | connected to signal <dosr>          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 256-word x 48-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <CLK24>         | rise     |
+    |     addrB          | connected to signal <addrb>         |          |
+    |     doB            | connected to signal <dob>           |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst - The RAM <Mram_RAM> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 32-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <PCI_CLK>       | rise     |
+    |     weA            | connected to signal <PCI_DataTransferWrite> | high     |
+    |     addrA          | connected to signal <PCI_TransactionAddr> |          |
+    |     diA            | connected to signal <PCI_AD>        |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 16-word x 32-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <PCI_CLK>       | rise     |
+    |     addrB          | connected to signal <PCI_AD>        |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <PCI_LogicAnalyzer> synthesized (advanced).
+WARNING:Xst:2677 - Node <data_4> of sequential type is unconnected in block <SR16>.
+WARNING:Xst:2677 - Node <data_5> of sequential type is unconnected in block <SR16>.
+WARNING:Xst:2677 - Node <data_6> of sequential type is unconnected in block <SR16>.
+WARNING:Xst:2677 - Node <data_7> of sequential type is unconnected in block <SR16>.
+WARNING:Xst:2677 - Node <data_8> of sequential type is unconnected in block <SR16>.
+WARNING:Xst:2677 - Node <data_9> of sequential type is unconnected in block <SR16>.
+WARNING:Xst:2677 - Node <data_10> of sequential type is unconnected in block <SR16>.
+WARNING:Xst:2677 - Node <data_11> of sequential type is unconnected in block <SR16>.
+WARNING:Xst:2677 - Node <data_12> of sequential type is unconnected in block <SR16>.
+WARNING:Xst:2677 - Node <data_13> of sequential type is unconnected in block <SR16>.
+WARNING:Xst:2677 - Node <data_14> of sequential type is unconnected in block <SR16>.
+WARNING:Xst:2677 - Node <data_15> of sequential type is unconnected in block <SR16>.
+WARNING:Xst:2677 - Node <stop_acq_0> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_2> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_3> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_4> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_5> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_6> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_7> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_8> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_9> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_10> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_11> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_12> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_13> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_14> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_15> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_16> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_17> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_18> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_19> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_20> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_21> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_22> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_23> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_24> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_25> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_26> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_27> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_28> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_29> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_30> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+WARNING:Xst:2677 - Node <PCI_data_31> of sequential type is unconnected in block <PCI_LogicAnalyzer>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 2
+ 16x32-bit dual-port block RAM                         : 1
+ 256x48-bit dual-port block RAM                        : 1
+# Counters                                             : 3
+ 11-bit up counter                                     : 1
+ 8-bit up counter                                      : 2
+# Registers                                            : 214
+ Flip-Flops                                            : 214
+# Multiplexers                                         : 1
+ 8-bit 8-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2042 - Unit PCI_LogicAnalyzer: 2 internal tristates are replaced by logic (pull-up yes): N5, N6.
+
+Optimizing unit <PCI_LogicAnalyzer> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block PCI_LogicAnalyzer, actual ratio is 12.
+
+Final Macro Processing ...
+
+Processing Unit <PCI_LogicAnalyzer> :
+	Found 4-bit shift register for signal <SR5/SR_0/data_3>.
+	Found 4-bit shift register for signal <SR5/SR_1/data_3>.
+	Found 4-bit shift register for signal <SR5/SR_2/data_3>.
+	Found 4-bit shift register for signal <SR5/SR_3/data_3>.
+	Found 4-bit shift register for signal <SR5/SR_4/data_3>.
+	Found 4-bit shift register for signal <SR5/SR_5/data_3>.
+	Found 4-bit shift register for signal <SR5/SR_6/data_3>.
+	Found 4-bit shift register for signal <SR5/SR_7/data_3>.
+	Found 4-bit shift register for signal <SR4/SR_0/data_3>.
+	Found 4-bit shift register for signal <SR4/SR_1/data_3>.
+	Found 4-bit shift register for signal <SR4/SR_2/data_3>.
+	Found 4-bit shift register for signal <SR4/SR_3/data_3>.
+	Found 4-bit shift register for signal <SR4/SR_4/data_3>.
+	Found 4-bit shift register for signal <SR4/SR_5/data_3>.
+	Found 4-bit shift register for signal <SR4/SR_6/data_3>.
+	Found 4-bit shift register for signal <SR4/SR_7/data_3>.
+	Found 4-bit shift register for signal <SR3/SR_0/data_3>.
+	Found 4-bit shift register for signal <SR3/SR_1/data_3>.
+	Found 4-bit shift register for signal <SR3/SR_2/data_3>.
+	Found 4-bit shift register for signal <SR3/SR_3/data_3>.
+	Found 4-bit shift register for signal <SR3/SR_4/data_3>.
+	Found 4-bit shift register for signal <SR3/SR_5/data_3>.
+	Found 4-bit shift register for signal <SR3/SR_6/data_3>.
+	Found 4-bit shift register for signal <SR3/SR_7/data_3>.
+	Found 4-bit shift register for signal <SR2/SR_0/data_3>.
+	Found 4-bit shift register for signal <SR2/SR_1/data_3>.
+	Found 4-bit shift register for signal <SR2/SR_2/data_3>.
+	Found 4-bit shift register for signal <SR2/SR_3/data_3>.
+	Found 4-bit shift register for signal <SR2/SR_4/data_3>.
+	Found 4-bit shift register for signal <SR2/SR_5/data_3>.
+	Found 4-bit shift register for signal <SR2/SR_6/data_3>.
+	Found 4-bit shift register for signal <SR2/SR_7/data_3>.
+	Found 3-bit shift register for signal <SR1/SR_0/data_3>.
+	Found 4-bit shift register for signal <SR1/SR_1/data_3>.
+	Found 3-bit shift register for signal <SR1/SR_2/data_3>.
+	Found 4-bit shift register for signal <SR1/SR_3/data_3>.
+	Found 4-bit shift register for signal <SR1/SR_4/data_3>.
+	Found 4-bit shift register for signal <SR1/SR_5/data_3>.
+	Found 4-bit shift register for signal <SR1/SR_6/data_3>.
+	Found 4-bit shift register for signal <SR1/SR_7/data_3>.
+	Found 3-bit shift register for signal <SR0/SR_0/data_3>.
+	Found 3-bit shift register for signal <SR0/SR_1/data_3>.
+	Found 3-bit shift register for signal <SR0/SR_2/data_3>.
+	Found 3-bit shift register for signal <SR0/SR_3/data_3>.
+	Found 3-bit shift register for signal <SR0/SR_4/data_3>.
+	Found 3-bit shift register for signal <SR0/SR_5/data_3>.
+	Found 3-bit shift register for signal <SR0/SR_6/data_3>.
+	Found 3-bit shift register for signal <SR0/SR_7/data_3>.
+Unit <PCI_LogicAnalyzer> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 59
+ Flip-Flops                                            : 59
+# Shift Registers                                      : 48
+ 3-bit shift register                                  : 10
+ 4-bit shift register                                  : 38
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                             *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : PCI_LogicAnalyzer.ngr
+Top Level Output File Name         : PCI_LogicAnalyzer
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 63
+
+Cell Usage :
+# BELS                             : 153
+#      GND                         : 1
+#      INV                         : 10
+#      LUT1                        : 24
+#      LUT2                        : 5
+#      LUT3                        : 23
+#      LUT3_L                      : 6
+#      LUT4                        : 17
+#      LUT4_D                      : 3
+#      LUT4_L                      : 4
+#      MUXCY                       : 24
+#      MUXF5                       : 11
+#      VCC                         : 1
+#      XORCY                       : 24
+# FlipFlops/Latches                : 107
+#      FD                          : 66
+#      FDC                         : 5
+#      FDCE                        : 1
+#      FDE                         : 26
+#      FDRE                        : 9
+# RAMS                             : 5
+#      RAMB4_S16_S16               : 5
+# Shift Registers                  : 48
+#      SRL16                       : 48
+# Clock Buffers                    : 2
+#      BUFGP                       : 2
+# IO Buffers                       : 60
+#      IBUF                        : 16
+#      IOBUF                       : 32
+#      OBUF                        : 2
+#      OBUFT                       : 10
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2s100tq144-6 
+
+ Number of Slices:                       74  out of   1200     6%  
+ Number of Slice Flip Flops:            107  out of   2400     4%  
+ Number of 4 input LUTs:                140  out of   2400     5%  
+    Number used as logic:                92
+    Number used as Shift registers:      48
+ Number of IOs:                          63
+ Number of bonded IOBs:                  62  out of     92    67%  
+ Number of BRAMs:                         5  out of     10    50%  
+ Number of GCLKs:                         2  out of      4    50%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+PCI_CLK                            | BUFGP                  | 141   |
+CLK24                              | BUFGP                  | 22    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+PCI_RSTn_inv(PCI_RSTn_inv1_INV_0:O)| NONE(PCI_Transaction)  | 6     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -6
+
+   Minimum period: 8.271ns (Maximum Frequency: 120.904MHz)
+   Minimum input arrival time before clock: 7.687ns
+   Maximum output required time after clock: 10.896ns
+   Maximum combinational path delay: 7.491ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'PCI_CLK'
+  Clock period: 8.271ns (frequency: 120.904MHz)
+  Total number of paths / destination ports: 322 / 201
+-------------------------------------------------------------------------
+Delay:               8.271ns (Levels of Logic = 3)
+  Source:            acq_counter_6 (FF)
+  Destination:       stop_acq_1 (FF)
+  Source Clock:      PCI_CLK rising
+  Destination Clock: PCI_CLK rising
+
+  Data Path: acq_counter_6 to stop_acq_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             2   1.085   1.206  acq_counter_6 (acq_counter_6)
+     LUT4:I0->O            2   0.549   1.206  acquisition_or0000123 (acquisition_or0000123)
+     LUT2:I1->O            2   0.549   1.206  acquisition_or0000124 (acquisition_cmp_eq0000)
+     LUT4:I3->O            1   0.549   1.035  stop_acq_not000140 (stop_acq_not0001)
+     FDE:CE                    0.886          stop_acq_1
+    ----------------------------------------
+    Total                      8.271ns (3.618ns logic, 4.653ns route)
+                                       (43.7% logic, 56.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK24'
+  Clock period: 7.362ns (frequency: 135.833MHz)
+  Total number of paths / destination ports: 186 / 43
+-------------------------------------------------------------------------
+Delay:               7.362ns (Levels of Logic = 3)
+  Source:            Mram_RAM_LA1 (RAM)
+  Destination:       USB_Data_0 (FF)
+  Source Clock:      CLK24 rising
+  Destination Clock: CLK24 rising
+
+  Data Path: Mram_RAM_LA1 to USB_Data_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB4_S16_S16:CLKB->DOB0    1   3.170   1.035  Mram_RAM_LA1 (dob<0>)
+     LUT3:I1->O            1   0.549   0.000  Mmux_USB_Data_mux0000_7 (Mmux_USB_Data_mux0000_7)
+     MUXF5:I0->O           1   0.315   1.035  Mmux_USB_Data_mux0000_5_f5 (Mmux_USB_Data_mux0000_5_f5)
+     LUT3:I1->O            1   0.549   0.000  addrb<2> (USB_Data_mux0000<0>)
+     FD:D                      0.709          USB_Data_0
+    ----------------------------------------
+    Total                      7.362ns (5.292ns logic, 2.070ns route)
+                                       (71.9% logic, 28.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'PCI_CLK'
+  Total number of paths / destination ports: 168 / 107
+-------------------------------------------------------------------------
+Offset:              7.687ns (Levels of Logic = 5)
+  Source:            PCI_FRAMEn (PAD)
+  Destination:       PCI_DevSel (FF)
+  Destination Clock: PCI_CLK rising
+
+  Data Path: PCI_FRAMEn to PCI_DevSel
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   0.776   1.665  PCI_FRAMEn_IBUF (PCI_FRAMEn_IBUF)
+     LUT4:I2->O            1   0.549   1.035  PCI_Targeted111 (PCI_Targeted111)
+     LUT4_D:I0->LO         1   0.549   0.100  PCI_Targeted133 (N114)
+     LUT3:I0->O            2   0.549   1.206  PCI_Targeted182 (PCI_Targeted)
+     LUT4:I1->O            1   0.549   0.000  PCI_DevSel_mux00001 (PCI_DevSel_mux0000)
+     FDC:D                     0.709          PCI_DevSel
+    ----------------------------------------
+    Total                      7.687ns (3.681ns logic, 4.006ns route)
+                                       (47.9% logic, 52.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK24'
+  Total number of paths / destination ports: 11 / 11
+-------------------------------------------------------------------------
+Offset:              6.189ns (Levels of Logic = 2)
+  Source:            USB_FRDn (PAD)
+  Destination:       addrb_0 (FF)
+  Destination Clock: CLK24 rising
+
+  Data Path: USB_FRDn to addrb_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             9   0.776   1.908  USB_FRDn_IBUF (USB_D_USB_Data_not0000_inv)
+     INV:I->O             11   0.549   2.070  USB_D_USB_Data_not0000_inv_inv1_INV_0 (USB_D_USB_Data_not0000_inv_inv)
+     FDE:CE                    0.886          addrb_0
+    ----------------------------------------
+    Total                      6.189ns (2.211ns logic, 3.978ns route)
+                                       (35.7% logic, 64.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'PCI_CLK'
+  Total number of paths / destination ports: 70 / 36
+-------------------------------------------------------------------------
+Offset:              10.896ns (Levels of Logic = 2)
+  Source:            PCI_AD_OE (FF)
+  Destination:       PCI_AD<31> (PAD)
+  Source Clock:      PCI_CLK rising
+
+  Data Path: PCI_AD_OE to PCI_AD<31>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   1.085   1.035  PCI_AD_OE (PCI_AD_OE)
+     INV:I->O             32   0.549   3.420  PCI_AD_OE_inv1_INV_0 (PCI_AD_OE_inv)
+     IOBUF:T->IO               4.807          PCI_AD_31_IOBUF (PCI_AD<31>)
+    ----------------------------------------
+    Total                     10.896ns (6.441ns logic, 4.455ns route)
+                                       (59.1% logic, 40.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK24'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              6.788ns (Levels of Logic = 1)
+  Source:            USB_Data_7 (FF)
+  Destination:       USB_D<7> (PAD)
+  Source Clock:      CLK24 rising
+
+  Data Path: USB_Data_7 to USB_D<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   1.085   1.035  USB_Data_7 (USB_Data_7)
+     OBUFT:I->O                4.668          USB_D_7_OBUFT (USB_D<7>)
+    ----------------------------------------
+    Total                      6.788ns (5.753ns logic, 1.035ns route)
+                                       (84.8% logic, 15.2% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Delay:               7.491ns (Levels of Logic = 2)
+  Source:            USB_FRDn (PAD)
+  Destination:       USB_D<7> (PAD)
+
+  Data Path: USB_FRDn to USB_D<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             9   0.776   1.908  USB_FRDn_IBUF (USB_D_USB_Data_not0000_inv)
+     OBUFT:T->O                4.807          USB_D_7_OBUFT (USB_D<7>)
+    ----------------------------------------
+    Total                      7.491ns (5.583ns logic, 1.908ns route)
+                                       (74.5% logic, 25.5% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 2.41 secs
+ 
+--> 
+
+Total memory usage is 140004 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   48 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

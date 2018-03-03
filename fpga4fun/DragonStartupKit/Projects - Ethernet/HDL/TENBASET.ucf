@@ -1,0 +1,17 @@
+NET "CLK40"  LOC = "p15"  ;
+NET "CLK_USB"  LOC = "P18"  ;
+NET "Ethernet_RDp"  LOC = "p80"  ;
+NET "Ethernet_TDm"  LOC = "P77"  ;
+NET "Ethernet_TDp"  LOC = "P76"  ;
+NET "LED<0>"  LOC = "P27"  ;
+NET "LED<1>"  LOC = "P51"  ;
+NET "LED<2>"  LOC = "P75"  ;
+NET "USB_D<0>"  LOC = "P67"  ;
+NET "USB_D<1>"  LOC = "P62"  ;
+NET "USB_D<2>"  LOC = "P60"  ;
+NET "USB_D<3>"  LOC = "P57"  ;
+NET "USB_D<4>"  LOC = "P39"  ;
+NET "USB_D<5>"  LOC = "P44"  ;
+NET "USB_D<6>"  LOC = "P46"  ;
+NET "USB_D<7>"  LOC = "P49"  ;
+NET "USB_FRDn"  LOC = "P26"  ;

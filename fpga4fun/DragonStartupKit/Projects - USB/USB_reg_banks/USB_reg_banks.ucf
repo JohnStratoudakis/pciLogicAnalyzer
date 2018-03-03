@@ -1,0 +1,15 @@
+NET "clk"  LOC = "P18"  ;
+NET "USB_FWRn"  LOC = "P29"  ;
+#NET "USB_FRDn"  LOC = "P26"  ;
+NET "USB_D<0>"  LOC = "P67"  ;
+NET "USB_D<1>"  LOC = "P62"  ;
+NET "USB_D<2>"  LOC = "P60"  ;
+NET "USB_D<3>"  LOC = "P57"  ;
+NET "USB_D<4>"  LOC = "P39"  ;
+NET "USB_D<5>"  LOC = "P44"  ;
+NET "USB_D<6>"  LOC = "P46"  ;
+NET "USB_D<7>"  LOC = "P49"  ;
+
+NET "LED<0>"  LOC = "P27"  ;
+NET "LED<1>"  LOC = "P51"  ;
+NET "LED<2>"  LOC = "P75"  ;

@@ -1,0 +1,6 @@
+CommandLine
+C:\Xilinx\10.1\ISE\bin\nt\unwrapped\xst.exe -ise C:/Documents and Settings/John/Desktop/RevEng-1/fpga4fun/Step 2a - Create Bitstream/LogicAnalyzer.ise -intstyle ise -ifn C:/Documents and Settings/John/Desktop/RevEng-1/fpga4fun/Step 2a - Create Bitstream/PCI_LogicAnalyzer.xst -ofn C:/Documents and Settings/John/Desktop/RevEng-1/fpga4fun/Step 2a - Create Bitstream/PCI_LogicAnalyzer.syr -finalclean 1
+s
+FormatString
+xst [-ifn <InputFile>] [-ofn <OutputFile>] [-ise <iseProjectFile>] [--quiet] [-intstyle <Style>] [--deb <DebugLevel>] [--finalclean <Clean>] [--PcubeFlow] [--globOptFlow] [--XstNtrc]
+s

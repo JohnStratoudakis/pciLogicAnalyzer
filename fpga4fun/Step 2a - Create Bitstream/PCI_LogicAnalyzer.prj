@@ -1,0 +1,3 @@
+verilog work "SR16.v"
+verilog work "SR16_8.v"
+verilog work "PCI_LogicAnalyzer.v"
